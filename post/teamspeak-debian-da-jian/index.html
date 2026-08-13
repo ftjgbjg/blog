@@ -1,0 +1,259 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🛠️ teamspeak debian搭建 | 自留地</title>
+<link rel="shortcut icon" href="https://skura.top/favicon.ico?v=1786594578102">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://skura.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="🛠️ teamspeak debian搭建 | 自留地 - Atom Feed" href="https://skura.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="1.首先更新系统并安装必要的依赖：
+sudo apt update &amp;&amp; sudo apt upgrade -y
+sudo apt install bzip2 wget curl -y
+
+创建专用用户
+为安全起见，不建议以 ..." />
+    <meta name="keywords" content="vps" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://skura.top">
+  <img class="avatar" src="https://skura.top/images/avatar.png?v=1786594578102" alt="">
+  </a>
+  <h1 class="site-title">
+    自留地
+  </h1>
+  <p class="site-description">
+    一些日常，一些碎碎念。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/ftjgbjg" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              🛠️ teamspeak debian搭建
+            </h2>
+            <div class="post-info">
+              <span>
+                2026-01-01
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://skura.top/tag/JvqFDL3RJE/" class="post-tag">
+                  # vps
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>1.首先更新系统并安装必要的依赖：</p>
+<p><code>sudo apt update &amp;&amp; sudo apt upgrade -y</code><br>
+<code>sudo apt install bzip2 wget curl -y</code></p>
+<ol>
+<li>创建专用用户<br>
+为安全起见，不建议以 root 用户运行 TeamSpeak：</li>
+</ol>
+<p><code>useradd teamspeak -m</code><br>
+<code>passwd teamspeak</code></p>
+<p>第二个指令之后会要求你输入新建的这个用户的密码并再次确认，跟着走就行了。<br>
+3. 下载并解压 TeamSpeak 服务器<br>
+访问TeamSpeak 官网获取最新版本链接，或使用以下命令下载（如果手动上传至root文件夹下）: <code>wget https://files.teamspeak-services.com/releases/server/3.13.7/teamspeak3-server_linux_amd64-3.13.7.tar.bz2</code></p>
+<p>解压:<br>
+<code>tar -xjvf teamspeak3-server_linux_amd64-3.13.7.tar.bz2</code><br>
+<code>mv teamspeak3-server_linux_amd64 teamspeak3</code><br>
+同时重命名文件夹（我这里是直接上传至根目录）<br>
+注意，这里服务端的版本号可能随着更新而变化，使用的时候不要直接复制</p>
+<p>由于我们是将用teamspeak这一用户来运行服务端文件，因此我们还要把它拷贝给该用户并设置权限：</p>
+<p><code>cp -R teamspeak3 /home/teamspeak/</code><br>
+<code>chown -R teamspeak:teamspeak /home/teamspeak/teamspeak3/</code></p>
+<p>接下来就是运行服务端文件了，首先切换到我们刚才新建的用户：</p>
+<p><code>su - teamspeak</code></p>
+<p>接下来进入服务端文件所在的目录（也就是我们之前重命名并拷贝过来的那一个）：</p>
+<p><code>cd teamspeak3</code></p>
+<p>4、首次启动前需同意许可协议：</p>
+<p><code>touch .ts3server_license_accepted</code></p>
+<p>5、启动服务器</p>
+<p><code>./ts3server_startscript.sh start</code></p>
+<p>6、记录管理员令牌</p>
+<p>启动后会生成管理员令牌，务必保存：</p>
+<p>ServerAdmin privilege key created, please use the following token to connect to the server and gain serveradmin rights for the first time:<br>
+token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+<p>7、设置服务开机启动</p>
+<p>首先还是先切换回root用户(会要求输入root用户密码)：此处可以断开ssh重新连接</p>
+<p><code>su -</code></p>
+<p>然后我们来新建一个自定义服务文件ts3.service（这里编辑器你用vim也行）：</p>
+<p><code>nano /lib/systemd/system/ts3.service</code></p>
+<p>该配置文件内容如下：</p>
+<p>[Unit]<br>
+Description=Teamspeak server<br>
+After=network.target<br>
+[Service]<br>
+WorkingDirectory=/home/teamspeak/teamspeak3<br>
+User=teamspeak<br>
+Group=teamspeak<br>
+Type=forking<br>
+ExecStart=/home/teamspeak/teamspeak3/ts3server_startscript.sh start inifile=ts3server.ini<br>
+ExecStop=/home/teamspeak/teamspeak3/ts3server_startscript.sh stop<br>
+PIDFile=/home/teamspeak/teamspeak3/ts3server.pid<br>
+RestartSec=15<br>
+Restart=always<br>
+[Install]<br>
+WantedBy=multi-user.target</p>
+<p>注意：这里的WorkingDirectory，ExecStart，ExecStop， PIDFile这四个参数是你服务端文件的绝对路径，如果你之前文件夹的路径跟我不一样，这里记得修改。</p>
+<p>之后保存退出并重启服务器即可。ctrl+o保存，ctrl+x退出</p>
+<p>在服务文件编辑完毕之后，我们就可以使用systemctl指令来启动teamspeak服务端并令其开机自启：</p>
+<p>启动服务端</p>
+<p><code>systemctl start ts3</code></p>
+<p>关闭服务端</p>
+<p><code>systemctl stop ts3</code></p>
+<p>开机自启</p>
+<p><code>systemctl enable ts3</code></p>
+<p>查看服务端运行信息</p>
+<p><code>systemctl status ts3</code></p>
+<p>重启</p>
+<p><code>systemctl restart ts3</code></p>
+<p>8、开放 TeamSpeak 所需端口（默认）：关闭防火墙的话可以忽略这一步<br>
+sudo ufw allow 9987/udp #语音通信<br>
+sudo ufw allow 10011/tcp #服务器查询<br>
+sudo ufw allow 30033/tcp #文件传输</p>
+<p>9、报错处理</p>
+<p>有可能你运行systemctl status ts3看到的是这样的信息：</p>
+<figure data-type="image" tabindex="1"><img src="https://skura.top/post-images/1767213644627.png" alt="" loading="lazy"></figure>
+<p>这时候我们还是先停止服务器运行，并重启服务器：</p>
+<p><code>systemctl disable ts3</code><br>
+<code>systemctl stop ts3</code><br>
+<code>reboot</code><br>
+接下来切到teamspeak用户，进入TS服务器目录，然后运行这条指令：</p>
+<p><code>su - teamspeak</code><br>
+<code>cd teamspeak3</code><br>
+<code>./ts3server_minimal_runscript.sh createinifile=1</code></p>
+<p>看到差不多这样的信息，就说明成功了</p>
+<figure data-type="image" tabindex="2"><img src="https://skura.top/post-images/1767214172369.png" alt="" loading="lazy"></figure>
+<p>此时CTRL+C退出，并重新回到root，再次赋予开机启动并开启服务器，查看状态应该可以看到如下信息</p>
+<p><code>su -</code><br>
+<code>systemctl enable ts3</code><br>
+<code>systemctl start ts3</code><br>
+<code>systemctl status ts3</code></p>
+<figure data-type="image" tabindex="3"><img src="https://skura.top/post-images/1767214468040.png" alt="" loading="lazy"></figure>
+<p>安装完成后，客户端可通过服务器 IP 和端口连接，使用之前保存的令牌获取管理员权限。</p>
+<p>参考<a href="https://www.aye10032.com/2022/11/20/2022-11-20-teamspeak/">www.aye10032.com</a>和豆包ai</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  © 2026 Shiven | <a href="https://t.me/Shiven_chat" style="text-decoration:none; color:inherit;">📢 Channel</a> | <a href="https://tz.sakurrua.eu.org/" style="text-decoration:none; color:inherit;">🟢 Node Status</a>
+  <a class="rss" href="https://skura.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

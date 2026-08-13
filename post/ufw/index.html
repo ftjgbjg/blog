@@ -1,0 +1,282 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ufw防火墙 | 自留地</title>
+<link rel="shortcut icon" href="https://skura.top/favicon.ico?v=1786594578102">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://skura.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="ufw防火墙 | 自留地 - Atom Feed" href="https://skura.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="1. 更新软件源（建议先做）
+sudo apt update
+
+2. 安装 ufw（如果没装）
+sudo apt install ufw -y
+
+3. 启用 ufw（如果没启用）
+sudo ufw enable
+
+4. 验证防火墙状态（简洁..." />
+    <meta name="keywords" content="vps" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://skura.top">
+  <img class="avatar" src="https://skura.top/images/avatar.png?v=1786594578102" alt="">
+  </a>
+  <h1 class="site-title">
+    自留地
+  </h1>
+  <p class="site-description">
+    一些日常，一些碎碎念。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/ftjgbjg" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ufw防火墙
+            </h2>
+            <div class="post-info">
+              <span>
+                2026-03-03
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://skura.top/tag/JvqFDL3RJE/" class="post-tag">
+                  # vps
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h1 id="1-更新软件源建议先做">1. 更新软件源（建议先做）</h1>
+<pre><code class="language-bash">sudo apt update
+</code></pre>
+<h1 id="2-安装-ufw如果没装">2. 安装 ufw（如果没装）</h1>
+<pre><code class="language-bash">sudo apt install ufw -y
+</code></pre>
+<h1 id="3-启用-ufw如果没启用">3. 启用 ufw（如果没启用）</h1>
+<pre><code class="language-bash">sudo ufw enable
+</code></pre>
+<h1 id="4-验证防火墙状态简洁版">4. 验证防火墙状态（简洁版）</h1>
+<pre><code class="language-bash">sudo ufw status
+</code></pre>
+<h1 id="5-查看带编号的规则方便删除">5. 查看带编号的规则，方便删除</h1>
+<pre><code class="language-bash">sudo ufw status numbered
+</code></pre>
+<h1 id="6-查看详细状态包括默认策略等">6. 查看详细状态，包括默认策略等</h1>
+<pre><code class="language-bash">sudo ufw status verbose
+</code></pre>
+<h1 id="7-临时关闭防火墙调试用">7. 临时关闭防火墙（调试用）</h1>
+<pre><code class="language-bash">sudo ufw disable
+</code></pre>
+<h1 id="8-允许端口访问示例">8. 允许端口访问（示例）</h1>
+<pre><code class="language-bash">sudo ufw allow 443/tcp          # 允许 HTTPS 443 端口 TCP 流量
+</code></pre>
+<pre><code class="language-bash">sudo ufw allow 41625/udp         # 允许 UDP 41625 端口流量
+</code></pre>
+<pre><code class="language-bash">sudo ufw deny 41809/tcp          # 拒绝面板端口 41809 TCP 流量，防止暴露公网
+</code></pre>
+<h1 id="9-删除某条规则按编号删除示例">9. 删除某条规则（按编号删除示例）</h1>
+<pre><code class="language-bash">sudo ufw delete [编号]
+</code></pre>
+<h1 id="例如删除允许-22-端口的规则先用-status-numbered-找编号">例如删除允许 22 端口的规则（先用 status numbered 找编号）</h1>
+<pre><code class="language-bash">sudo ufw delete allow 22/tcp
+</code></pre>
+<h1 id="10-重新加载防火墙配置规则变更后">10. 重新加载防火墙配置（规则变更后）</h1>
+<pre><code class="language-bash">sudo ufw reload
+</code></pre>
+<h1 id="11-查看服务器监听端口及进程诊断用">11. 查看服务器监听端口及进程（诊断用）</h1>
+<pre><code class="language-bash">sudo ss -tunlp
+</code></pre>
+<h1 id="参数解释">参数解释：</h1>
+<pre><code class="language-bash"># -t : 显示 TCP 端口
+# -u : 显示 UDP 端口
+# -n : 端口数字显示，不转名字
+# -l : 仅显示监听状态
+# -p : 显示进程信息
+</code></pre>
+<h1 id="12-通用-ufw-命令格式">12. 通用 ufw 命令格式：</h1>
+<pre><code class="language-bash"># 允许端口：sudo ufw allow [端口]/[协议]
+# 拒绝端口：sudo ufw deny [端口]/[协议]
+# 允许指定 IP 访问某端口：
+# sudo ufw allow from [IP地址] to any port [端口] proto [协议]
+</code></pre>
+<h1 id="13-重置防火墙及注意事项">13. 重置防火墙及注意事项</h1>
+<pre><code class="language-bash"># 重置防火墙（清空所有规则，恢复默认配置）
+sudo ufw reset
+
+# 注意：
+# - 执行后所有规则和自定义配置将被清除
+# - 默认会关闭防火墙，需要重新启用
+# - 你当前所有通过防火墙的连接（如 SSH）可能会中断
+# - 一定要保证有备用连接方式或控制台，防止被锁死
+# - 重置后第一时间放行 SSH 端口，避免远程连接断开
+</code></pre>
+<h1 id="14-重置后设置默认策略和关键端口">14. 重置后设置默认策略和关键端口</h1>
+<pre><code class="language-bash">sudo ufw default deny incoming    # 默认拒绝所有入站
+</code></pre>
+<pre><code class="language-bash">sudo ufw default allow outgoing   # 允许所有出站
+</code></pre>
+<pre><code class="language-bash">sudo ufw allow 22/tcp              # 允许 SSH 端口，保证远程管理
+</code></pre>
+<pre><code class="language-bash">sudo ufw allow 443/tcp             # 允许代理端口
+</code></pre>
+<pre><code class="language-bash">sudo ufw deny 41809/tcp            # 拒绝面板端口，防止暴露公网
+</code></pre>
+<h1 id="15-启用防火墙如果未启用">15. 启用防火墙（如果未启用）</h1>
+<pre><code class="language-bash">sudo ufw enable
+</code></pre>
+<h1 id="16-查看状态确认">16. 查看状态确认</h1>
+<pre><code class="language-bash">sudo ufw status verbose
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#1-%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E6%BA%90%E5%BB%BA%E8%AE%AE%E5%85%88%E5%81%9A">1. 更新软件源（建议先做）</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85-ufw%E5%A6%82%E6%9E%9C%E6%B2%A1%E8%A3%85">2. 安装 ufw（如果没装）</a></li>
+<li><a href="#3-%E5%90%AF%E7%94%A8-ufw%E5%A6%82%E6%9E%9C%E6%B2%A1%E5%90%AF%E7%94%A8">3. 启用 ufw（如果没启用）</a></li>
+<li><a href="#4-%E9%AA%8C%E8%AF%81%E9%98%B2%E7%81%AB%E5%A2%99%E7%8A%B6%E6%80%81%E7%AE%80%E6%B4%81%E7%89%88">4. 验证防火墙状态（简洁版）</a></li>
+<li><a href="#5-%E6%9F%A5%E7%9C%8B%E5%B8%A6%E7%BC%96%E5%8F%B7%E7%9A%84%E8%A7%84%E5%88%99%E6%96%B9%E4%BE%BF%E5%88%A0%E9%99%A4">5. 查看带编号的规则，方便删除</a></li>
+<li><a href="#6-%E6%9F%A5%E7%9C%8B%E8%AF%A6%E7%BB%86%E7%8A%B6%E6%80%81%E5%8C%85%E6%8B%AC%E9%BB%98%E8%AE%A4%E7%AD%96%E7%95%A5%E7%AD%89">6. 查看详细状态，包括默认策略等</a></li>
+<li><a href="#7-%E4%B8%B4%E6%97%B6%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99%E8%B0%83%E8%AF%95%E7%94%A8">7. 临时关闭防火墙（调试用）</a></li>
+<li><a href="#8-%E5%85%81%E8%AE%B8%E7%AB%AF%E5%8F%A3%E8%AE%BF%E9%97%AE%E7%A4%BA%E4%BE%8B">8. 允许端口访问（示例）</a></li>
+<li><a href="#9-%E5%88%A0%E9%99%A4%E6%9F%90%E6%9D%A1%E8%A7%84%E5%88%99%E6%8C%89%E7%BC%96%E5%8F%B7%E5%88%A0%E9%99%A4%E7%A4%BA%E4%BE%8B">9. 删除某条规则（按编号删除示例）</a></li>
+<li><a href="#%E4%BE%8B%E5%A6%82%E5%88%A0%E9%99%A4%E5%85%81%E8%AE%B8-22-%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%A7%84%E5%88%99%E5%85%88%E7%94%A8-status-numbered-%E6%89%BE%E7%BC%96%E5%8F%B7">例如删除允许 22 端口的规则（先用 status numbered 找编号）</a></li>
+<li><a href="#10-%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BD%BD%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE%E8%A7%84%E5%88%99%E5%8F%98%E6%9B%B4%E5%90%8E">10. 重新加载防火墙配置（规则变更后）</a></li>
+<li><a href="#11-%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3%E5%8F%8A%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E7%94%A8">11. 查看服务器监听端口及进程（诊断用）</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A">参数解释：</a></li>
+<li><a href="#12-%E9%80%9A%E7%94%A8-ufw-%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F">12. 通用 ufw 命令格式：</a></li>
+<li><a href="#13-%E9%87%8D%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">13. 重置防火墙及注意事项</a></li>
+<li><a href="#14-%E9%87%8D%E7%BD%AE%E5%90%8E%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%AD%96%E7%95%A5%E5%92%8C%E5%85%B3%E9%94%AE%E7%AB%AF%E5%8F%A3">14. 重置后设置默认策略和关键端口</a></li>
+<li><a href="#15-%E5%90%AF%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99%E5%A6%82%E6%9E%9C%E6%9C%AA%E5%90%AF%E7%94%A8">15. 启用防火墙（如果未启用）</a></li>
+<li><a href="#16-%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E7%A1%AE%E8%AE%A4">16. 查看状态确认</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://skura.top/post/zui-chang-yong-de-vps-yi-jian-jiao-ben/">
+              <h3 class="post-title">
+                常用的VPS一键脚本Debian
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  © 2026 Shiven | <a href="https://t.me/Shiven_chat" style="text-decoration:none; color:inherit;">📢 Channel</a> | <a href="https://tz.sakurrua.eu.org/" style="text-decoration:none; color:inherit;">🟢 Node Status</a>
+  <a class="rss" href="https://skura.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

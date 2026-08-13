@@ -1,0 +1,509 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>yaml配置文件备份 | 自留地</title>
+<link rel="shortcut icon" href="https://skura.top/favicon.ico?v=1786594578102">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://skura.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="yaml配置文件备份 | 自留地 - Atom Feed" href="https://skura.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="必读！！！
+注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
+跑裸核用户请自行去掉下方控制面板模块的注释。
+机场订阅
+proxy-providers:
+ty:
+url: &quot;&quot;
+type: http..." />
+    <meta name="keywords" content="备份" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://skura.top">
+  <img class="avatar" src="https://skura.top/images/avatar.png?v=1786594578102" alt="">
+  </a>
+  <h1 class="site-title">
+    自留地
+  </h1>
+  <p class="site-description">
+    一些日常，一些碎碎念。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/ftjgbjg" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              yaml配置文件备份
+            </h2>
+            <div class="post-info">
+              <span>
+                2026-01-03
+              </span>
+              <span>
+                12 min read
+              </span>
+              
+                <a href="https://skura.top/tag/mIHnmNbdyW/" class="post-tag">
+                  # 备份
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h1 id="必读">必读！！！</h1>
+<h1 id="注意规则在满足自己需求情况下尽量做到精简不要过度复杂以免影响性能">注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。</h1>
+<h1 id="跑裸核用户请自行去掉下方控制面板模块的注释">跑裸核用户请自行去掉下方控制面板模块的注释。</h1>
+<h1 id="机场订阅">机场订阅</h1>
+<p>proxy-providers:<br>
+ty:<br>
+url: &quot;&quot;<br>
+type: http<br>
+interval: 86400<br>
+health-check:<br>
+enable: true<br>
+url: http://cp.cloudflare.com/generate_204<br>
+interval: 300<br>
+proxy: 🔗 直连<br>
+override:<br>
+udp: false<br>
+gm:<br>
+url: &quot;&quot;<br>
+type: http<br>
+interval: 86400<br>
+health-check:<br>
+enable: true<br>
+url: http://cp.cloudflare.com/generate_204<br>
+interval: 300<br>
+proxy: 🔗 直连<br>
+override:<br>
+udp: true</p>
+<h1 id="节点信息">节点信息</h1>
+<p>proxies:</p>
+<ul>
+<li>{name: 🔗 直连, type: direct}</li>
+<li>{name: 🚫 屏蔽, type: reject}</li>
+</ul>
+<h1 id="全局配置">全局配置</h1>
+<p>port: 7890<br>
+socks-port: 7891<br>
+redir-port: 7892<br>
+mixed-port: 7893<br>
+tproxy-port: 7894<br>
+allow-lan: true<br>
+bind-address: &quot;*&quot;<br>
+ipv6: false<br>
+unified-delay: true<br>
+tcp-concurrent: true</p>
+<h1 id="interface-name-enp6s18">interface-name: enp6s18</h1>
+<p>log-level: warning<br>
+find-process-mode: 'off'<br>
+global-client-fingerprint: chrome<br>
+keep-alive-idle: 600<br>
+keep-alive-interval: 15<br>
+profile:<br>
+store-selected: true<br>
+store-fake-ip: true</p>
+<h1 id="为防止使用插件朋友遇到面板问题我注释掉了此模块">为防止使用插件朋友遇到面板问题，我注释掉了此模块。</h1>
+<h1 id="跑裸核朋友自行删除注释即可使用nikki仅内核的ui路径改为etcnikkirunui">跑裸核朋友自行删除注释即可，使用nikki仅内核的ui路径改为/etc/nikki/run/ui</h1>
+<p>#external-controller: 0.0.0.0:9090<br>
+#secret: &quot;&quot;<br>
+#external-ui: &quot;/etc/mihomo/ui&quot;<br>
+#external-ui-name: zashboard<br>
+#external-ui-url: &quot;https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip&quot;</p>
+<h1 id="dns模块">DNS模块</h1>
+<p>dns:<br>
+enable: true<br>
+listen: 0.0.0.0:1053<br>
+ipv6: false<br>
+respect-rules: true<br>
+enhanced-mode: fake-ip<br>
+fake-ip-range: 28.0.0.1/8<br>
+fake-ip-filter-mode: blacklist<br>
+fake-ip-filter:<br>
+- &quot;rule-set:private_domain,cn_domain&quot;<br>
+- &quot;+.msftconnecttest.com&quot;<br>
+- &quot;+.msftncsi.com&quot;<br>
+- &quot;+.services.googleapis.cn&quot;<br>
+- &quot;time.*.com&quot;<br>
+- &quot;+.market.xiaomi.com&quot;<br>
+- &quot;+.lan&quot;<br>
+- &quot;+.local&quot;<br>
+- &quot;+.localdomain&quot;<br>
+- &quot;+.arpa&quot;<br>
+- &quot;+.duckduckgo.com&quot;<br>
+- &quot;+.duckduckgousercontent.com&quot;<br>
+default-nameserver:<br>
+- 223.5.5.5<br>
+- 119.29.29.29<br>
+direct-nameserver:<br>
+- 223.5.5.5<br>
+- 119.29.29.29<br>
+direct-nameserver-follow-policy: false<br>
+proxy-server-nameserver:<br>
+- 223.5.5.5<br>
+- 119.29.29.29<br>
+nameserver-policy:<br>
+# 国内常见域名全部直连运营商DNS解析<br>
+&quot;rule-set:private_domain,cn_domain&quot;:<br>
+- 223.5.5.5<br>
+- 119.29.29.29<br>
+# 其他国外域名强制走加密DoH<br>
+&quot;rule-set:geolocation-!cn,gfw_domain&quot;:<br>
+- https://cloudflare-dns.com/dns-query<br>
+- https://dns.google/dns-query</p>
+<h1 id="namesever尽量用运营商提供的dns">namesever尽量用运营商提供的DNS</h1>
+<p>nameserver:<br>
+- 223.5.5.5<br>
+- 119.29.29.29</p>
+<h1 id="出站策略根据自己情况调整每个策略里分组排序增删都可以比如把美国自动放到第一个比如删除香港故转注意别漏掉表情逗号等">出站策略，根据自己情况调整每个策略里分组排序，增删都可以，比如把美国自动放到第一个，比如删除香港故转，注意别漏掉表情逗号等。</h1>
+<h1 id="如果相应分组没有筛选到对应的国家请根据自己节点名字调整筛选关键字">如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。</h1>
+<h1 id="没有再使用锚点是考虑很多新手修改难度这样新手修改某个分组更容易些">没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。</h1>
+<p>proxy-groups:</p>
+<ul>
+<li>{name: 🚀 默认代理, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 📹 YouTube, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 📺 Twitch, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 🎮 游戏平台, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 🍀 Google, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 🤖 ChatGPT, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 🪟 Microsoft, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 🎵 TikTok, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 📲 Telegram, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇭🇰 香港节点1, 🇺🇲 美国节点1, ♻️ 自动选择, 🌐 全部节点, 🔗 直连]}</li>
+<li>{name: 🛑 广告过滤, type: select, proxies: [🚫 屏蔽, 🔗 直连, 🚀 默认代理]}</li>
+<li>{name: 🇭🇰 香港节点, type: select, include-all: true, filter: &quot;(?i)港|hk|hongkong|hong kong&quot;}</li>
+<li>{name: 🇭🇰 香港节点1, type: select, include-all: true, filter: &quot;(?i)港|hk|hongkong|hong kong&quot;}</li>
+<li>{name: 🇺🇲 美国节点, type: select, include-all: true, filter: &quot;(?i)美|us|unitedstates|united states&quot;}</li>
+<li>{name: 🇺🇲 美国节点1, type: select, include-all: true, filter: &quot;(?i)美|us|unitedstates|united states&quot;}</li>
+<li>{name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: &quot;^(?!.<em>(直连<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">屏</mi><mi mathvariant="normal">蔽</mi></mrow><annotation encoding="application/x-tex">|屏蔽</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord cjk_fallback">屏</span><span class="mord cjk_fallback">蔽</span></span></span></span>)).</em>$&quot;}</li>
+<li>{name: 🌐 全部节点, type: select, include-all: true}</li>
+</ul>
+<h1 id="-name-日本节点-type-select-include-all-true-filter-i日jpjapan">- {name: 🇯🇵 日本节点, type: select, include-all: true, filter: &quot;(?i)日|jp|japan&quot;}</h1>
+<h1 id="-name-台湾节点-type-select-include-all-true-filter-i台twtaiwan">- {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: &quot;(?i)台|tw|taiwan&quot;}</h1>
+<h1 id="-name-狮城节点-type-select-include-all-true-filter-i新加坡坡狮城sgsingapore">- {name: 🇸🇬 狮城节点, type: select, include-all: true, filter: &quot;(?i)新加坡|坡|狮城|SG|Singapore&quot;}</h1>
+<p>#use: zj</p>
+<h1 id="规则匹配">规则匹配</h1>
+<h1 id="此规则部分没有做防泄露处理因为弊严重大于利">此规则部分没有做防泄露处理，因为弊严重大于利！</h1>
+<p>rules:</p>
+<h1 id="私有网络ip直连避免走代理浪费资源">私有网络IP直连，避免走代理浪费资源</h1>
+<ul>
+<li>RULE-SET,private_ip,🔗 直连,no-resolve</li>
+</ul>
+<h1 id="私有网络域名直连">私有网络域名直连</h1>
+<ul>
+<li>RULE-SET,private_domain,🔗 直连</li>
+</ul>
+<h1 id="google国内加速域名直连避免走代理影响访问速度">Google国内加速域名直连，避免走代理影响访问速度</h1>
+<ul>
+<li>DOMAIN-SUFFIX,googleapis.cn,🍀 Google</li>
+</ul>
+<h1 id="中国ip地址直连国内流量不走代理">中国IP地址直连，国内流量不走代理</h1>
+<ul>
+<li>RULE-SET,cn_ip,🔗 直连</li>
+</ul>
+<h1 id="中国域名直连">中国域名直连</h1>
+<ul>
+<li>RULE-SET,cn_domain,🔗 直连</li>
+</ul>
+<h1 id="paypal域名直连保证支付通畅">PayPal域名直连，保证支付通畅</h1>
+<ul>
+<li>RULE-SET,paypal_domain,🔗 直连</li>
+</ul>
+<h1 id="国内游戏服务器域名直连保证游戏体验">国内游戏服务器域名直连，保证游戏体验</h1>
+<ul>
+<li>RULE-SET,games_domain_cn,🔗 直连</li>
+</ul>
+<h1 id="大规模广告分类屏蔽规则优先执行提升屏蔽效率">大规模广告分类屏蔽规则，优先执行，提升屏蔽效率</h1>
+<ul>
+<li>RULE-SET,category-ads-all,🚫 屏蔽</li>
+</ul>
+<h1 id="广告过滤规则集拦截细节广告和跟踪补充上条规则">广告过滤规则集，拦截细节广告和跟踪，补充上条规则</h1>
+<ul>
+<li>RULE-SET,adblock,🛑 广告过滤</li>
+</ul>
+<h1 id="微软应用中心firebasecrashlytics-域名屏蔽减少跟踪慎用可能影响部分功能">微软应用中心，Firebase，Crashlytics 域名屏蔽，减少跟踪（慎用，可能影响部分功能）</h1>
+<ul>
+<li>DOMAIN-SUFFIX,appcenter.ms,🚫 屏蔽</li>
+<li>DOMAIN-SUFFIX,firebase.io,🚫 屏蔽</li>
+<li>DOMAIN-SUFFIX,crashlytics.com,🚫 屏蔽</li>
+</ul>
+<h1 id="ai相关服务走专用代理组保证稳定访问">AI相关服务走专用代理组，保证稳定访问</h1>
+<ul>
+<li>RULE-SET,ai,🤖 ChatGPT</li>
+</ul>
+<h1 id="youtube专用代理组">YouTube专用代理组</h1>
+<ul>
+<li>RULE-SET,youtube_domain,📹 YouTube</li>
+</ul>
+<h1 id="twitch专用代理组">Twitch专用代理组</h1>
+<ul>
+<li>RULE-SET,twitch_domain,📺 Twitch</li>
+</ul>
+<h1 id="游戏平台专用代理组">游戏平台专用代理组</h1>
+<ul>
+<li>RULE-SET,games_domain,🎮 游戏平台</li>
+</ul>
+<h1 id="tiktok专用代理组">TikTok专用代理组</h1>
+<ul>
+<li>RULE-SET,tiktok_domain,🎵 TikTok</li>
+</ul>
+<h1 id="telegram-ip走代理不解析域名以避免dns污染">Telegram IP走代理，不解析域名以避免DNS污染</h1>
+<ul>
+<li>RULE-SET,telegram_ip,📲 Telegram,no-resolve</li>
+</ul>
+<h1 id="telegram域名走代理">Telegram域名走代理</h1>
+<ul>
+<li>RULE-SET,telegram_domain,📲 Telegram</li>
+</ul>
+<h1 id="github走默认代理组">GitHub走默认代理组</h1>
+<ul>
+<li>RULE-SET,github_domain,🚀 默认代理</li>
+</ul>
+<h1 id="微软相关域名走微软专用代理组">微软相关域名走微软专用代理组</h1>
+<ul>
+<li>RULE-SET,microsoft_domain,🪟 Microsoft</li>
+</ul>
+<h1 id="google-ip走专用代理避免dns污染">Google IP走专用代理，避免DNS污染</h1>
+<ul>
+<li>RULE-SET,google_ip,🍀 Google,no-resolve</li>
+</ul>
+<h1 id="google域名走专用代理">Google域名走专用代理</h1>
+<ul>
+<li>RULE-SET,google_domain,🍀 Google</li>
+</ul>
+<h1 id="自定义代理组规则通常是机场节点等">自定义代理组规则，通常是机场节点等</h1>
+<ul>
+<li>RULE-SET,proxylite,🚀 默认代理</li>
+</ul>
+<h1 id="gfw规则域名走默认代理防封锁">GFW规则域名走默认代理，防封锁</h1>
+<ul>
+<li>RULE-SET,gfw_domain,🚀 默认代理</li>
+</ul>
+<h1 id="国外非中国地区流量走默认代理">国外非中国地区流量走默认代理</h1>
+<ul>
+<li>RULE-SET,geolocation-!cn,🚀 默认代理</li>
+</ul>
+<h1 id="特定自定义域名走默认代理">特定自定义域名走默认代理</h1>
+<ul>
+<li>DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理</li>
+<li>DOMAIN-SUFFIX,hltv.org,🇺🇲 美国节点</li>
+<li>DOMAIN-SUFFIX,skura.top,🚀 默认代理</li>
+</ul>
+<h1 id="漏网之鱼默认走直连或选择策略防止死循环">漏网之鱼，默认走直连或选择策略防止死循环</h1>
+<ul>
+<li>MATCH,🐟 漏网之鱼</li>
+</ul>
+<h1 id="规则集">规则集</h1>
+<h2 id="type可选httpfileinline-behavior可选domainipcidrclassical-format可选yamltextmrs">type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs</h2>
+<p>rule-anchor:<br>
+ip: &amp;ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}<br>
+domain: &amp;domain {type: http, interval: 86400, behavior: domain, format: mrs}<br>
+class: &amp;class {type: http, interval: 86400, behavior: classical, format: text}<br>
+rule-providers:<br>
+private_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs&quot;}<br>
+proxylite: { &lt;&lt;: *class, url: &quot;https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list&quot;}<br>
+ai: {  &lt;&lt;: *domain, url: &quot;https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs&quot; }<br>
+youtube_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs&quot;}<br>
+twitch_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.mrs&quot;}<br>
+games_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games@!cn.mrs&quot;}<br>
+games_domain_cn: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games@cn.mrs&quot;}<br>
+google_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs&quot;}<br>
+github_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs&quot;}<br>
+telegram_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs&quot;}<br>
+netflix_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs&quot;}<br>
+paypal_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs&quot;}<br>
+onedrive_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs&quot;}<br>
+microsoft_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs&quot;}<br>
+apple_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs&quot;}<br>
+speedtest_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs&quot;}<br>
+tiktok_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs&quot;}<br>
+geolocation-!cn: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs&quot;}<br>
+cn_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs&quot;}<br>
+gfw_domain: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs&quot;}<br>
+category-ads-all: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs&quot;}<br>
+adblock: { &lt;&lt;: *domain, url: &quot;https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.mrs&quot;}</p>
+<p>private_ip: {&lt;&lt;: *ip, url: &quot;https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs&quot;}<br>
+cn_ip: { &lt;&lt;: *ip, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs&quot;}<br>
+google_ip: { &lt;&lt;: *ip, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs&quot;}<br>
+telegram_ip: { &lt;&lt;: *ip, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs&quot;}<br>
+netflix_ip: { &lt;&lt;: *ip, url: &quot;https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs&quot;}<br>
+apple_ip: {&lt;&lt;: *ip, url: &quot;https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo-lite/geoip/apple.mrs&quot;}</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E5%BF%85%E8%AF%BB">必读！！！</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F%E8%A7%84%E5%88%99%E5%9C%A8%E6%BB%A1%E8%B6%B3%E8%87%AA%E5%B7%B1%E9%9C%80%E6%B1%82%E6%83%85%E5%86%B5%E4%B8%8B%E5%B0%BD%E9%87%8F%E5%81%9A%E5%88%B0%E7%B2%BE%E7%AE%80%E4%B8%8D%E8%A6%81%E8%BF%87%E5%BA%A6%E5%A4%8D%E6%9D%82%E4%BB%A5%E5%85%8D%E5%BD%B1%E5%93%8D%E6%80%A7%E8%83%BD">注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。</a></li>
+<li><a href="#%E8%B7%91%E8%A3%B8%E6%A0%B8%E7%94%A8%E6%88%B7%E8%AF%B7%E8%87%AA%E8%A1%8C%E5%8E%BB%E6%8E%89%E4%B8%8B%E6%96%B9%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF%E6%A8%A1%E5%9D%97%E7%9A%84%E6%B3%A8%E9%87%8A">跑裸核用户请自行去掉下方控制面板模块的注释。</a></li>
+<li><a href="#%E6%9C%BA%E5%9C%BA%E8%AE%A2%E9%98%85">机场订阅</a></li>
+<li><a href="#%E8%8A%82%E7%82%B9%E4%BF%A1%E6%81%AF">节点信息</a></li>
+<li><a href="#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE">全局配置</a></li>
+<li><a href="#interface-name-enp6s18">interface-name: enp6s18</a></li>
+<li><a href="#%E4%B8%BA%E9%98%B2%E6%AD%A2%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6%E6%9C%8B%E5%8F%8B%E9%81%87%E5%88%B0%E9%9D%A2%E6%9D%BF%E9%97%AE%E9%A2%98%E6%88%91%E6%B3%A8%E9%87%8A%E6%8E%89%E4%BA%86%E6%AD%A4%E6%A8%A1%E5%9D%97">为防止使用插件朋友遇到面板问题，我注释掉了此模块。</a></li>
+<li><a href="#%E8%B7%91%E8%A3%B8%E6%A0%B8%E6%9C%8B%E5%8F%8B%E8%87%AA%E8%A1%8C%E5%88%A0%E9%99%A4%E6%B3%A8%E9%87%8A%E5%8D%B3%E5%8F%AF%E4%BD%BF%E7%94%A8nikki%E4%BB%85%E5%86%85%E6%A0%B8%E7%9A%84ui%E8%B7%AF%E5%BE%84%E6%94%B9%E4%B8%BAetcnikkirunui">跑裸核朋友自行删除注释即可，使用nikki仅内核的ui路径改为/etc/nikki/run/ui</a></li>
+<li><a href="#dns%E6%A8%A1%E5%9D%97">DNS模块</a></li>
+<li><a href="#namesever%E5%B0%BD%E9%87%8F%E7%94%A8%E8%BF%90%E8%90%A5%E5%95%86%E6%8F%90%E4%BE%9B%E7%9A%84dns">namesever尽量用运营商提供的DNS</a></li>
+<li><a href="#%E5%87%BA%E7%AB%99%E7%AD%96%E7%95%A5%E6%A0%B9%E6%8D%AE%E8%87%AA%E5%B7%B1%E6%83%85%E5%86%B5%E8%B0%83%E6%95%B4%E6%AF%8F%E4%B8%AA%E7%AD%96%E7%95%A5%E9%87%8C%E5%88%86%E7%BB%84%E6%8E%92%E5%BA%8F%E5%A2%9E%E5%88%A0%E9%83%BD%E5%8F%AF%E4%BB%A5%E6%AF%94%E5%A6%82%E6%8A%8A%E7%BE%8E%E5%9B%BD%E8%87%AA%E5%8A%A8%E6%94%BE%E5%88%B0%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AF%94%E5%A6%82%E5%88%A0%E9%99%A4%E9%A6%99%E6%B8%AF%E6%95%85%E8%BD%AC%E6%B3%A8%E6%84%8F%E5%88%AB%E6%BC%8F%E6%8E%89%E8%A1%A8%E6%83%85%E9%80%97%E5%8F%B7%E7%AD%89">出站策略，根据自己情况调整每个策略里分组排序，增删都可以，比如把美国自动放到第一个，比如删除香港故转，注意别漏掉表情逗号等。</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9C%E7%9B%B8%E5%BA%94%E5%88%86%E7%BB%84%E6%B2%A1%E6%9C%89%E7%AD%9B%E9%80%89%E5%88%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E5%9B%BD%E5%AE%B6%E8%AF%B7%E6%A0%B9%E6%8D%AE%E8%87%AA%E5%B7%B1%E8%8A%82%E7%82%B9%E5%90%8D%E5%AD%97%E8%B0%83%E6%95%B4%E7%AD%9B%E9%80%89%E5%85%B3%E9%94%AE%E5%AD%97">如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。</a></li>
+<li><a href="#%E6%B2%A1%E6%9C%89%E5%86%8D%E4%BD%BF%E7%94%A8%E9%94%9A%E7%82%B9%E6%98%AF%E8%80%83%E8%99%91%E5%BE%88%E5%A4%9A%E6%96%B0%E6%89%8B%E4%BF%AE%E6%94%B9%E9%9A%BE%E5%BA%A6%E8%BF%99%E6%A0%B7%E6%96%B0%E6%89%8B%E4%BF%AE%E6%94%B9%E6%9F%90%E4%B8%AA%E5%88%86%E7%BB%84%E6%9B%B4%E5%AE%B9%E6%98%93%E4%BA%9B">没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。</a></li>
+<li><a href="#-name-%E6%97%A5%E6%9C%AC%E8%8A%82%E7%82%B9-type-select-include-all-true-filter-i%E6%97%A5jpjapan">- {name: 🇯🇵 日本节点, type: select, include-all: true, filter: &quot;(?i)日|jp|japan&quot;}</a></li>
+<li><a href="#-name-%E5%8F%B0%E6%B9%BE%E8%8A%82%E7%82%B9-type-select-include-all-true-filter-i%E5%8F%B0twtaiwan">- {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: &quot;(?i)台|tw|taiwan&quot;}</a></li>
+<li><a href="#-name-%E7%8B%AE%E5%9F%8E%E8%8A%82%E7%82%B9-type-select-include-all-true-filter-i%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%9D%A1%E7%8B%AE%E5%9F%8Esgsingapore">- {name: 🇸🇬 狮城节点, type: select, include-all: true, filter: &quot;(?i)新加坡|坡|狮城|SG|Singapore&quot;}</a></li>
+<li><a href="#%E8%A7%84%E5%88%99%E5%8C%B9%E9%85%8D">规则匹配</a></li>
+<li><a href="#%E6%AD%A4%E8%A7%84%E5%88%99%E9%83%A8%E5%88%86%E6%B2%A1%E6%9C%89%E5%81%9A%E9%98%B2%E6%B3%84%E9%9C%B2%E5%A4%84%E7%90%86%E5%9B%A0%E4%B8%BA%E5%BC%8A%E4%B8%A5%E9%87%8D%E5%A4%A7%E4%BA%8E%E5%88%A9">此规则部分没有做防泄露处理，因为弊严重大于利！</a></li>
+<li><a href="#%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9Cip%E7%9B%B4%E8%BF%9E%E9%81%BF%E5%85%8D%E8%B5%B0%E4%BB%A3%E7%90%86%E6%B5%AA%E8%B4%B9%E8%B5%84%E6%BA%90">私有网络IP直连，避免走代理浪费资源</a></li>
+<li><a href="#%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%E5%9F%9F%E5%90%8D%E7%9B%B4%E8%BF%9E">私有网络域名直连</a></li>
+<li><a href="#google%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E5%9F%9F%E5%90%8D%E7%9B%B4%E8%BF%9E%E9%81%BF%E5%85%8D%E8%B5%B0%E4%BB%A3%E7%90%86%E5%BD%B1%E5%93%8D%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6">Google国内加速域名直连，避免走代理影响访问速度</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BDip%E5%9C%B0%E5%9D%80%E7%9B%B4%E8%BF%9E%E5%9B%BD%E5%86%85%E6%B5%81%E9%87%8F%E4%B8%8D%E8%B5%B0%E4%BB%A3%E7%90%86">中国IP地址直连，国内流量不走代理</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E5%9F%9F%E5%90%8D%E7%9B%B4%E8%BF%9E">中国域名直连</a></li>
+<li><a href="#paypal%E5%9F%9F%E5%90%8D%E7%9B%B4%E8%BF%9E%E4%BF%9D%E8%AF%81%E6%94%AF%E4%BB%98%E9%80%9A%E7%95%85">PayPal域名直连，保证支付通畅</a></li>
+<li><a href="#%E5%9B%BD%E5%86%85%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%9F%E5%90%8D%E7%9B%B4%E8%BF%9E%E4%BF%9D%E8%AF%81%E6%B8%B8%E6%88%8F%E4%BD%93%E9%AA%8C">国内游戏服务器域名直连，保证游戏体验</a></li>
+<li><a href="#%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%B9%BF%E5%91%8A%E5%88%86%E7%B1%BB%E5%B1%8F%E8%94%BD%E8%A7%84%E5%88%99%E4%BC%98%E5%85%88%E6%89%A7%E8%A1%8C%E6%8F%90%E5%8D%87%E5%B1%8F%E8%94%BD%E6%95%88%E7%8E%87">大规模广告分类屏蔽规则，优先执行，提升屏蔽效率</a></li>
+<li><a href="#%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E8%A7%84%E5%88%99%E9%9B%86%E6%8B%A6%E6%88%AA%E7%BB%86%E8%8A%82%E5%B9%BF%E5%91%8A%E5%92%8C%E8%B7%9F%E8%B8%AA%E8%A1%A5%E5%85%85%E4%B8%8A%E6%9D%A1%E8%A7%84%E5%88%99">广告过滤规则集，拦截细节广告和跟踪，补充上条规则</a></li>
+<li><a href="#%E5%BE%AE%E8%BD%AF%E5%BA%94%E7%94%A8%E4%B8%AD%E5%BF%83firebasecrashlytics-%E5%9F%9F%E5%90%8D%E5%B1%8F%E8%94%BD%E5%87%8F%E5%B0%91%E8%B7%9F%E8%B8%AA%E6%85%8E%E7%94%A8%E5%8F%AF%E8%83%BD%E5%BD%B1%E5%93%8D%E9%83%A8%E5%88%86%E5%8A%9F%E8%83%BD">微软应用中心，Firebase，Crashlytics 域名屏蔽，减少跟踪（慎用，可能影响部分功能）</a></li>
+<li><a href="#ai%E7%9B%B8%E5%85%B3%E6%9C%8D%E5%8A%A1%E8%B5%B0%E4%B8%93%E7%94%A8%E4%BB%A3%E7%90%86%E7%BB%84%E4%BF%9D%E8%AF%81%E7%A8%B3%E5%AE%9A%E8%AE%BF%E9%97%AE">AI相关服务走专用代理组，保证稳定访问</a></li>
+<li><a href="#youtube%E4%B8%93%E7%94%A8%E4%BB%A3%E7%90%86%E7%BB%84">YouTube专用代理组</a></li>
+<li><a href="#twitch%E4%B8%93%E7%94%A8%E4%BB%A3%E7%90%86%E7%BB%84">Twitch专用代理组</a></li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E5%B9%B3%E5%8F%B0%E4%B8%93%E7%94%A8%E4%BB%A3%E7%90%86%E7%BB%84">游戏平台专用代理组</a></li>
+<li><a href="#tiktok%E4%B8%93%E7%94%A8%E4%BB%A3%E7%90%86%E7%BB%84">TikTok专用代理组</a></li>
+<li><a href="#telegram-ip%E8%B5%B0%E4%BB%A3%E7%90%86%E4%B8%8D%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D%E4%BB%A5%E9%81%BF%E5%85%8Ddns%E6%B1%A1%E6%9F%93">Telegram IP走代理，不解析域名以避免DNS污染</a></li>
+<li><a href="#telegram%E5%9F%9F%E5%90%8D%E8%B5%B0%E4%BB%A3%E7%90%86">Telegram域名走代理</a></li>
+<li><a href="#github%E8%B5%B0%E9%BB%98%E8%AE%A4%E4%BB%A3%E7%90%86%E7%BB%84">GitHub走默认代理组</a></li>
+<li><a href="#%E5%BE%AE%E8%BD%AF%E7%9B%B8%E5%85%B3%E5%9F%9F%E5%90%8D%E8%B5%B0%E5%BE%AE%E8%BD%AF%E4%B8%93%E7%94%A8%E4%BB%A3%E7%90%86%E7%BB%84">微软相关域名走微软专用代理组</a></li>
+<li><a href="#google-ip%E8%B5%B0%E4%B8%93%E7%94%A8%E4%BB%A3%E7%90%86%E9%81%BF%E5%85%8Ddns%E6%B1%A1%E6%9F%93">Google IP走专用代理，避免DNS污染</a></li>
+<li><a href="#google%E5%9F%9F%E5%90%8D%E8%B5%B0%E4%B8%93%E7%94%A8%E4%BB%A3%E7%90%86">Google域名走专用代理</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%90%86%E7%BB%84%E8%A7%84%E5%88%99%E9%80%9A%E5%B8%B8%E6%98%AF%E6%9C%BA%E5%9C%BA%E8%8A%82%E7%82%B9%E7%AD%89">自定义代理组规则，通常是机场节点等</a></li>
+<li><a href="#gfw%E8%A7%84%E5%88%99%E5%9F%9F%E5%90%8D%E8%B5%B0%E9%BB%98%E8%AE%A4%E4%BB%A3%E7%90%86%E9%98%B2%E5%B0%81%E9%94%81">GFW规则域名走默认代理，防封锁</a></li>
+<li><a href="#%E5%9B%BD%E5%A4%96%E9%9D%9E%E4%B8%AD%E5%9B%BD%E5%9C%B0%E5%8C%BA%E6%B5%81%E9%87%8F%E8%B5%B0%E9%BB%98%E8%AE%A4%E4%BB%A3%E7%90%86">国外非中国地区流量走默认代理</a></li>
+<li><a href="#%E7%89%B9%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%B5%B0%E9%BB%98%E8%AE%A4%E4%BB%A3%E7%90%86">特定自定义域名走默认代理</a></li>
+<li><a href="#%E6%BC%8F%E7%BD%91%E4%B9%8B%E9%B1%BC%E9%BB%98%E8%AE%A4%E8%B5%B0%E7%9B%B4%E8%BF%9E%E6%88%96%E9%80%89%E6%8B%A9%E7%AD%96%E7%95%A5%E9%98%B2%E6%AD%A2%E6%AD%BB%E5%BE%AA%E7%8E%AF">漏网之鱼，默认走直连或选择策略防止死循环</a></li>
+<li><a href="#%E8%A7%84%E5%88%99%E9%9B%86">规则集</a>
+<ul>
+<li><a href="#type%E5%8F%AF%E9%80%89httpfileinline-behavior%E5%8F%AF%E9%80%89domainipcidrclassical-format%E5%8F%AF%E9%80%89yamltextmrs">type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://skura.top/post/yi-fa-xiao-zhan/">
+              <h3 class="post-title">
+                🎙️ 一发小站
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  © 2026 Shiven | <a href="https://t.me/Shiven_chat" style="text-decoration:none; color:inherit;">📢 Channel</a> | <a href="https://tz.sakurrua.eu.org/" style="text-decoration:none; color:inherit;">🟢 Node Status</a>
+  <a class="rss" href="https://skura.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
