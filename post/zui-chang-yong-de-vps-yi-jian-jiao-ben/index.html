@@ -1,0 +1,282 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>常用的VPS一键脚本Debian | 自留地</title>
+<link rel="shortcut icon" href="https://skura.top/favicon.ico?v=1794594882413">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://skura.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="常用的VPS一键脚本Debian | 自留地 - Atom Feed" href="https://skura.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="科技lion脚本
+https://blog.kejilion.pro/vps-setup-2026/
+bash &lt;(curl -sL kejiLion.sh)
+
+一键更新系统
+日常维护：
+sudo apt update &amp;&a..." />
+    <meta name="keywords" content="vps" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://skura.top">
+  <img class="avatar" src="https://skura.top/images/avatar.png?v=1794594882413" alt="">
+  </a>
+  <h1 class="site-title">
+    自留地
+  </h1>
+  <p class="site-description">
+    一些日常，一些碎碎念。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/ftjgbjg" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              常用的VPS一键脚本Debian
+            </h2>
+            <div class="post-info">
+              <span>
+                2026-03-03
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://skura.top/tag/JvqFDL3RJE/" class="post-tag">
+                  # vps
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h2 id="科技lion脚本">科技lion脚本</h2>
+<p><a href="https://blog.kejilion.pro/vps-setup-2026/">https://blog.kejilion.pro/vps-setup-2026/</a></p>
+<pre><code class="language-bash">bash &lt;(curl -sL kejiLion.sh)
+</code></pre>
+<h2 id="一键更新系统">一键更新系统</h2>
+<p>日常维护：</p>
+<pre><code class="language-BASH">sudo apt update &amp;&amp; sudo apt upgrade -y
+</code></pre>
+<p>大保养：</p>
+<pre><code class="language-bash">apt update -y &amp;&amp; apt full-upgrade -y &amp;&amp; apt autoremove -y &amp;&amp; apt autoclean -y
+</code></pre>
+<p>查看系统当前版本：</p>
+<pre><code class="language-bash">cat /etc/debian_version
+</code></pre>
+<h2 id="一键安装-wget-curl-git">一键安装 wget curl git</h2>
+<pre><code class="language-bash">apt install sudo curl wget 
+</code></pre>
+<h2 id="linux内核开启bbr需要默认内核是49以上查看内核">Linux内核开启bbr，需要默认内核是4.9以上，查看内核：</h2>
+<pre><code class="language-bash">uname -a
+</code></pre>
+<p>检查当前拥塞控制算法</p>
+<pre><code class="language-bash">sysctl net.ipv4.tcp_congestion_control
+</code></pre>
+<p>开启bbr：</p>
+<pre><code class="language-bash">echo -e &quot;net.core.default_qdisc=fq\nnet.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf
+</code></pre>
+<p>关闭IPv6：</p>
+<pre><code class="language-bash">echo -e &quot;net.ipv6.conf.all.disable_ipv6=1\nnet.ipv6.conf.default.disable_ipv6=1\nnet.ipv6.conf.lo.disable_ipv6=1&quot; &gt;&gt; /etc/sysctl.conf
+</code></pre>
+<p>最后：</p>
+<pre><code class="language-bash">sysctl -p
+</code></pre>
+<h2 id="nodequality">NodeQuality</h2>
+<pre><code>bash &lt;(curl -sL https://run.NodeQuality.com)
+</code></pre>
+<h2 id="测速">测速</h2>
+<pre><code class="language-bash">curl -sL nxtrace.org/speedtest_install | bash
+</code></pre>
+<h2 id="ip-质量体检和解锁检测">IP 质量体检和解锁检测</h2>
+<pre><code class="language-bash">bash &lt;(curl -Ls https://Check.Place) -N
+</code></pre>
+<pre><code class="language-bash">bash &lt;(curl -L -s check.unlock.media)
+</code></pre>
+<pre><code class="language-bash">bash &lt;(curl -L -s https://github.com/1-stream/RegionRestrictionCheck/raw/main/check.sh) -M 4
+</code></pre>
+<pre><code class="language-bash">bash &lt;(curl -Ls IP.Check.Place)
+</code></pre>
+<h2 id="验证dns">验证dns</h2>
+<pre><code class="language-bash">cat /etc/resolv.conf
+</code></pre>
+<h2 id="回程路由">回程路由</h2>
+<pre><code class="language-bash"># bash / zsh
+bash &lt;(curl -fsSL https://raw.githubusercontent.com/ibsgss/TcpQuality/main/runTcpQuality.sh)
+</code></pre>
+<pre><code class="language-bash">wget -qO- git.io/besttrace | bash
+</code></pre>
+<pre><code class="language-bash">bash &lt;(curl -Ls &quot;https://raw.githubusercontent.com/tomdiary/besttrace/main/main.sh&quot;)
+</code></pre>
+<h2 id="ipv4-icmp-trace">IPv4 ICMP Trace</h2>
+<pre><code class="language-bash">curl -sL nxtrace.org/nt | bash
+</code></pre>
+<p>nexttrace</p>
+<h2 id="融合怪">融合怪</h2>
+<pre><code class="language-bash">curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh &amp;&amp; chmod +x ecs.sh &amp;&amp; bash ecs.sh
+</code></pre>
+<h2 id="一键realm">一键realm</h2>
+<h3 id="国外机器">国外机器</h3>
+<pre><code class="language-bash">wget -qO- https://raw.githubusercontent.com/zywe03/realm-xwPF/main/xwPF.sh | sudo bash -s install
+</code></pre>
+<h3 id="国内机器">国内机器</h3>
+<pre><code class="language-bash">wget -qO- https://v6.gh-proxy.org/https://raw.githubusercontent.com/zywe03/realm-xwPF/main/xwPF.sh | sudo bash -s install
+</code></pre>
+<p>再次运行本脚本只需要输入<code>pf</code>回车即可</p>
+<h2 id="重启命令">重启命令</h2>
+<p>优雅重启（推荐，等待进程结束后重启）</p>
+<pre><code class="language-bash">sudo reboot
+</code></pre>
+<p>强制重启（紧急情况用，可能丢失临时数据）</p>
+<pre><code class="language-bash">sudo poweroff -r now
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%A7%91%E6%8A%80lion%E8%84%9A%E6%9C%AC">科技lion脚本</a></li>
+<li><a href="#%E4%B8%80%E9%94%AE%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F">一键更新系统</a></li>
+<li><a href="#%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-wget-curl-git">一键安装 wget curl git</a></li>
+<li><a href="#linux%E5%86%85%E6%A0%B8%E5%BC%80%E5%90%AFbbr%E9%9C%80%E8%A6%81%E9%BB%98%E8%AE%A4%E5%86%85%E6%A0%B8%E6%98%AF49%E4%BB%A5%E4%B8%8A%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8">Linux内核开启bbr，需要默认内核是4.9以上，查看内核：</a></li>
+<li><a href="#nodequality">NodeQuality</a></li>
+<li><a href="#%E6%B5%8B%E9%80%9F">测速</a></li>
+<li><a href="#ip-%E8%B4%A8%E9%87%8F%E4%BD%93%E6%A3%80%E5%92%8C%E8%A7%A3%E9%94%81%E6%A3%80%E6%B5%8B">IP 质量体检和解锁检测</a></li>
+<li><a href="#%E9%AA%8C%E8%AF%81dns">验证dns</a></li>
+<li><a href="#%E5%9B%9E%E7%A8%8B%E8%B7%AF%E7%94%B1">回程路由</a></li>
+<li><a href="#ipv4-icmp-trace">IPv4 ICMP Trace</a></li>
+<li><a href="#%E8%9E%8D%E5%90%88%E6%80%AA">融合怪</a></li>
+<li><a href="#%E4%B8%80%E9%94%AErealm">一键realm</a>
+<ul>
+<li><a href="#%E5%9B%BD%E5%A4%96%E6%9C%BA%E5%99%A8">国外机器</a></li>
+<li><a href="#%E5%9B%BD%E5%86%85%E6%9C%BA%E5%99%A8">国内机器</a></li>
+</ul>
+</li>
+<li><a href="#%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4">重启命令</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://skura.top/post/yin-le-bi-ji/">
+              <h3 class="post-title">
+                🎵 音乐笔记
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  © 2026 Shiven | <a href="https://t.me/Shiven_chat" style="text-decoration:none; color:inherit;">📢 Channel</a> | <a href="https://tz.sakurrua.eu.org/" style="text-decoration:none; color:inherit;">🟢 Node Status</a>
+  <a class="rss" href="https://skura.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
